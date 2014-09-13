@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913053904) do
+ActiveRecord::Schema.define(version: 20140913171658) do
 
   create_table "all_years", force: true do |t|
     t.datetime "created_at"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140913053904) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "major_id"
-    t.decimal  "total_fulfilled"
+    t.string   "name"
   end
 
   create_table "majors", force: true do |t|
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 20140913053904) do
   create_table "requirements", force: true do |t|
     t.string   "name"
     t.decimal  "credits"
-    t.boolean  "fulfilled"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "curriculum_field_id"
