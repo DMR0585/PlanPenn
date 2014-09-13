@@ -14,7 +14,7 @@
 @SSandH = @CIS.curriculum_fields.create(name:"Social Sciences and Humanities" , total_required:7)
 @FreeElec =@CIS.curriculum_fields.create(name:"Free Elective" , total_required:3)
 
-puts @Math.requirements.create(name: "MATH 104", credits: 1)
+@Math.requirements.create(name: "MATH 104", credits: 1)
 @Math.requirements.create(name: "MATH 114", credits: 1)
 @Math.requirements.create(name: "CIS 160", credits: 1)
 @Math.requirements.create(name: "CIS 261 or ESE 301 or ENM 231 or STAT 430", credits: 1)
