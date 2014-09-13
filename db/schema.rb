@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913040914) do
+ActiveRecord::Schema.define(version: 20140913053904) do
 
   create_table "all_years", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "courses", force: true do |t|
@@ -25,23 +26,29 @@ ActiveRecord::Schema.define(version: 20140913040914) do
     t.boolean  "taken"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pairing_id"
   end
 
   create_table "curriculum_fields", force: true do |t|
     t.decimal  "total_required"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "major_id"
+    t.decimal  "total_fulfilled"
   end
 
   create_table "majors", force: true do |t|
     t.decimal  "total_required"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "name"
   end
 
   create_table "pairings", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "semester_id"
   end
 
   create_table "requirements", force: true do |t|
@@ -50,9 +57,19 @@ ActiveRecord::Schema.define(version: 20140913040914) do
     t.boolean  "fulfilled"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "curriculum_field_id"
+    t.integer  "pairing_id"
   end
 
   create_table "semesters", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "all_year_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "pennkey"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
