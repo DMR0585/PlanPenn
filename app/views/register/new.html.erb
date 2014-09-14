@@ -14,6 +14,11 @@
     <%= f.label :password_verification %><br>
     <%= f.text_field :password_verification %>
   </p>
+
+	<p>
+	<%= f.label :major %><br>
+  	<%= f.select :major, [['CIS','CIS'],['DMD','DMD'],['ESE','ESE'],['MEAM','MEAM'],['EE','EE'],['CBE','CBE'],['BE','BE'],['NETS','NETS'],['CMPE','CMPE']] %>
+  	</p>
  
   <p>
     <%= f.submit :Register %>
