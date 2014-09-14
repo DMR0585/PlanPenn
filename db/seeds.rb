@@ -6,6 +6,10 @@
 #   cities = City.find_or_create_by([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.find_or_create_by(name: 'Emanuel', city: cities.first)
 ################################## CIS MAJOR #####################################
+
+@User = User.find_or_create_by(name: "Lily Wang", pennkey: "lilw")
+@User.majors.find_or_create_by(name: "Computer Science (CIS)", total_required:40)
+
 @CIS = Major.find_or_create_by(name: "Computer Science (CIS)", total_required:40)
 
 @Math = @CIS.curriculum_fields.find_or_create_by!(name:"Math" , total_required:6)

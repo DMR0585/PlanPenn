@@ -1,8 +1,13 @@
 <div class = "reqs"> 
  
-	<%= @reqs.each do |r| %>
-		<div class = "box">r.name</div>
-	<%= end %>
+	<%= @fields.each do |f| %>
+
+		<div class = "field"><%=f.name%></div>
+		<%= f.requirements.each do |r| %>
+			<div class = "box"><%=r.name%></div>
+		<% end %>
+		
+	<% end %>
   
   
 </div>

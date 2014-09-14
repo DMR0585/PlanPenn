@@ -1,15 +1,15 @@
-require_relative "../../lib/registrar_client"
-require_relative "../../lib/pcr_client"
+require "registrar_client"
+require "pcr_client"
 
 class MainController < ApplicationController
 
     
     def index
-    	@user = User.find(0)
-  		@major = @user.major
+    	@user = User.first
+    	@major = @user.majors[0]
   		@fields = @major.curriculum_fields
   	
-        registrar = RegistrarClient.new(username, password)
+        @registrar = RegistrarClient.new(username, password)
         # RegistrarClient methods:
         # 
         # Search using subjects and course numbers
@@ -24,7 +24,7 @@ class MainController < ApplicationController
         # puts JSON.pretty_generate(JSON.parse(registrar.catalog_search("CIS")))
         # puts JSON.pretty_generate(JSON.parse(registrar.detailed_params))
 
-        pcr = CourseReviewClient.new(pcr_token)
+        @pcr = CourseReviewClient.new(pcr_token)
         # CourseReviewClient methods:
         # 
         # List all departments
@@ -62,4 +62,4 @@ class MainController < ApplicationController
     end
 
 end
->>>>>>> dbd6cdddb5d1f854ea5fd3cb80d07f2da660e17b
+
