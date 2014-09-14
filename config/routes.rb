@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   post 'register/new', to: 'register#create', as: 'register'
 
   post 'user/index', to: 'user#login', as: 'user'

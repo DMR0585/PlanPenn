@@ -1,3 +1,99 @@
 // Place all the styles related to the Main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html,body
+{
+	margin:0;padding:0
+}
+body
+{
+	font: 76% arial,sans-serif;text-align:center;
+
+}
+p
+{
+	margin:0 10px 10px
+}
+a
+{
+	padding:5px;
+	text-decoration:none;
+	color:#000000;
+}
+div#header
+{
+	background-color:#FFFFFF;
+	box-shadow: 0px 5px 20px #296092;
+	color: #6D7B90;
+	z-index: 1;
+	position:relative
+}
+div#header h1
+{
+	height:25%;
+	width:100%;
+	line-height:80px;
+	margin:0;
+	padding-left:10px;
+}
+div#container
+{
+	
+
+  background: -webkit-linear-gradient(180deg, #58A2DB 10%, #A9D5FF 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(180deg, #58A2DB  10%, #A9D5FF 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(180deg, #58A2DB  10%, #A9D5FF 90%); /* IE10 */
+  background:      -o-linear-gradient(180deg, #58A2DB  10%, #A9D5FF 90%); /* Opera 11.10+ */
+  background:         linear-gradient(180deg, #58A2DB  10%, #A9D5FF 90%); /* W3C */
+        
+
+	text-align:left;
+	position:absolute;
+	height:100%;
+	width:100%;
+}
+div#content p
+{
+	line-height:1.4
+}
+div#navigation
+{
+	background:#FFFFFF;
+	height:100%;
+}
+div#navigation ul
+{
+	margin:15px 0;
+	padding:0;
+	list-style-type:none;
+}
+div#navigation li
+{
+	margin-bottom:5px;
+}
+div#extra
+{
+	background:#CCC8B3;
+}
+div#wrapper
+{
+	height:100%
+}
+div#container
+{
+	margin:0 auto
+}
+div#content
+{
+	float:right;
+	width:80%;
+	height:100%
+}
+div#navigation
+{
+	float:left;
+	width:20%;
+	height:100%;
+	box-shadow: 0px 0px 100px #3294EC
+}
