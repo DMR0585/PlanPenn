@@ -1,8 +1,9 @@
 class UserController < ApplicationController
+	before_action :authenticate_user!
 	def index
+		redirect_to '/main/index.html'
 	end
 
 	def login
-	redirect_to controller: "main", action: "index"	
 	end
 end

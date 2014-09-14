@@ -1,0 +1,15 @@
+<%= form_for :course, :url => search_path, :html => {:method => :get}  do |f| %>
+  <p>
+    <%= f.label :dept %><br>
+    <%= f.select :dept, @depts %>
+  </p>
+ 
+  <p>
+    <%= f.label :number %><br>
+    <%= f.text_field :number %>
+  </p>
+ 
+  <p>
+    <%= f.submit :search %>
+  </p>
+<% end %>
