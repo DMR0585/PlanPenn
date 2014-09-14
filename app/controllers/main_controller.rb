@@ -8,8 +8,7 @@ class MainController < ApplicationController
     	@user = User.first
     	@major = @user.majors.first
   		@fields = @major.curriculum_fields
-  	
-        @registrar = RegistrarClient.new(username, password)
+
         # RegistrarClient methods:
         # 
         # Search using subjects and course numbers
@@ -21,10 +20,10 @@ class MainController < ApplicationController
         # 
         # detail_params()
 
-        # puts JSON.pretty_generate(JSON.parse(registrar.catalog_search("CIS")))
-        # puts JSON.pretty_generate(JSON.parse(registrar.detailed_params))
+        # puts JSON.pretty_generate(JSON.parse(registrar_client.catalog_search("CIS", "110")))
+        # puts JSON.pretty_generate(JSON.parse(registrar_client.detail_params))
 
-        @pcr = CourseReviewClient.new(pcr_token)
+        @depts = pcr_client.list_depts.collect { |dept| dept["id"]}
         # CourseReviewClient methods:
         # 
         # List all departments
@@ -48,6 +47,18 @@ class MainController < ApplicationController
         # puts pcr.find_average_difficulty("CIS", "110")
     end
 
+    def search
+        dept = params[:course][:dept]
+        num = params[:course][:number]
+
+        @fields = User.first.majors.first.curriculum_fields
+        @depts = pcr_client.list_depts.collect { |dept| dept["id"]}
+
+        results = JSON.parse(registrar_client.catalog_search(dept, num))["result_data"]
+        @ids = results.map { |struct| struct["course_id"] }
+        render "index"
+    end
+
     private 
     def username
         "UPENN_OD_emw7_1000863"
@@ -59,6 +70,14 @@ class MainController < ApplicationController
 
     def pcr_token
         "vGLIYZimwXpoExsrSXku0ugPTflbzz"
+    end
+
+    def pcr_client
+        @pcr ||= CourseReviewClient.new(pcr_token)
+    end
+
+    def registrar_client
+        @registrar ||= RegistrarClient.new(username, password)
     end
 
 end
