@@ -23,31 +23,18 @@ a
 }
 div#header
 {
-	background-color:#FFFFFF;
-	box-shadow: 0px 5px 20px #296092;
-	color: #6D7B90;
-	z-index: 1;
-	position:relative
+	background-color:#F3F2ED;
 }
 div#header h1
 {
 	height:25%;
-	width:100%;
+	width:100%
 	line-height:80px;
 	margin:0;
 	padding-left:10px;
 }
 div#container
 {
-	
-
-  background: -webkit-linear-gradient(180deg, #58A2DB 10%, #A9D5FF 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(180deg, #58A2DB  10%, #A9D5FF 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(180deg, #58A2DB  10%, #A9D5FF 90%); /* IE10 */
-  background:      -o-linear-gradient(180deg, #58A2DB  10%, #A9D5FF 90%); /* Opera 11.10+ */
-  background:         linear-gradient(180deg, #58A2DB  10%, #A9D5FF 90%); /* W3C */
-        
-
 	text-align:left;
 	position:absolute;
 	height:100%;
@@ -59,8 +46,8 @@ div#content p
 }
 div#navigation
 {
-	background:#FFFFFF;
-	height:100%;
+	background:#F6F0E0;
+	height:100%
 }
 div#navigation ul
 {
@@ -76,9 +63,15 @@ div#extra
 {
 	background:#CCC8B3;
 }
-div#wrapper
+div#footer
 {
-	height:100%
+	background:#BFBD93;
+}
+div#footer p
+{
+	margin:20%;
+	padding:5px 10px;
+	width:80%
 }
 div#container
 {
@@ -93,7 +86,5 @@ div#content
 div#navigation
 {
 	float:left;
-	width:20%;
-	height:100%;
-	box-shadow: 0px 0px 100px #3294EC
+	width:20%
 }
