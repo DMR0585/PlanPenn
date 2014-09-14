@@ -12,7 +12,7 @@
 
 @CIS = Major.find_or_create_by(name: "Computer Science (CIS)", total_required:40)
 
-@Math = @CIS.curriculum_fields.find_or_create_by!(name:"Math" , total_required:6)
+@Math = @CIS.curriculum_fields.find_or_create_by(name:"Math" , total_required:6)
 @NatSci = @CIS.curriculum_fields.find_or_create_by(name:"Natural Science" , total_required:4)
 @Eng = @CIS.curriculum_fields.find_or_create_by(name:"Engineering" , total_required:14)
 @TechElec = @CIS.curriculum_fields.find_or_create_by(name:"Tech Elective" , total_required:6)
