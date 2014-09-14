@@ -1,0 +1,21 @@
+<h1>Register Here</h1>
+<%= form_for :register do |f| %>
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+ 
+  <p>
+    <%= f.label :password %><br>
+    <%= f.text_field :password %>
+  </p>
+
+   <p>
+    <%= f.label :password_verification %><br>
+    <%= f.text_field :password_verification %>
+  </p>
+ 
+  <p>
+    <%= f.submit :Register %>
+  </p>
+<% end %>

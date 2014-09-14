@@ -7,7 +7,10 @@ class MainController < ApplicationController
     def index
     	@user = User.first
     	@major = @user.majors[0]
-  		@fields = @major.curriculum_fields
+
+
+
+  	@fields = @major.curriculum_fields
   	
         @registrar = RegistrarClient.new(username, password)
         # RegistrarClient methods:
