@@ -1,14 +1,19 @@
 
-<div class = "reqs" style = "margin-top: 25px"> 
+<style>
+ 
+  </style>
+ <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<ul id="sortablereqs" class="connectedSortable" style = "margin-top: 25px"> 
  
 	<% @fields.each do |f| %>
 
 		<div class = "field"><%=f.name %></div>
 		<% f.requirements.each do |r| %>
-			<div class = "box"><%=r.name %></div>
+			<li class = "box"><%=r.name %></li>
 		<% end %>
 		
 	<% end %>
   
   
-</div>
+</ul>

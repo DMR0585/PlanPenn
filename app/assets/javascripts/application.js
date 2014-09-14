@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+ $(function() {
+    $( "#sortablereqs, #sortable1, #sortable2, #sortable3, #sortable4, #sortable5, #sortable6, #sortable7, #sortable8" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  });
+
